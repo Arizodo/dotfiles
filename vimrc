@@ -1,42 +1,40 @@
-execute pathogen#infect()
+"Vundle Settings
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
+Plugin 'dracula/vim'
+Plugin 'ervandew/supertab'
+call vundle#end()
 
-"Set Relative Numbers
-set number
-set relativenumber
+"Airline settings
+set laststatus=2
+let g:airline#extension#tabline#enabled = 1
 
-"Set various variables
+colorscheme dracula
+set guifont=SourceCodePro\ 8
+
+"General (G)Vim settings
+set go-=T
+set go-=M
+set go-=r
+set go-=b
+
+syntax on
+set autochdir
 set shiftwidth=4
 set tabstop=4
-set laststatus=2
+set number relativenumber
 
-"Fix backspace issue
-set backspace=indent,eol,start
 
-"Setting Colorscheme and (Syntax) highlighting
-colorscheme wombat
-set background=dark
-syntax on
-"Key (re)mapping
-map § :NERDTreeToggle <CR>
-map <c-Space> :CtrlPLine <CR>
+filetype plugin indent on
 
-"Disabling Arrow keys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-inoremap <Up> <NOP>
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-vnoremap <Right> <NOP>
-vnoremap <Down> <NOP>
-vnoremap <Left> <NOP>
-vnoremap <Right> <NOP>
-
-"Disabling bell noise
-set t_vb=
-
-"autoexec
-"autocmd vimenter * Tagbar
-
+"Keyboard mapping
+map <F3> :NERDTreeToggle<Enter>
